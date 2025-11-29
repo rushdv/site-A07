@@ -1,11 +1,13 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+ import { useState } from 'react'
+ // import reactLogo from './assets/react.svg'
+// import viteLogo from '/vite.svg'
+// import './App.css'
 
 
-//import Navbar from "./components/Navbar";
+import Navbar from "./components/Navbar";
 
+import vector1 from './assets/vector1.png';
+import vector2 from './assets/vector2.png';
 
 
 function App() {
@@ -14,35 +16,41 @@ function App() {
   return (
     <>
 
-      <div className='bg-[#F5F5F5]'> 
+      <div className='bg-[#F5F5F5]'>
+
+
+        <Navbar/>
+        
 
 
 
-        <nav className='flex justify-between px-6 p-3 bg-white'>
-          <div>
-            <h3 className='font-bold'>CS - Ticket System</h3>
+
+        <div className='flex gap-4 w-[90%] mx-auto my-10'>
+          <div className='relative w-[50%] h-30 flex items-center rounded-lg justify-between bg-gradient-to-r from-[#632EE3] to-[#9F62F2]'>
+            <div className=' w-full h-full bg-no-repeat bg-left bg-cover ' style={{ backgroundImage: `url(${vector1})` }}></div>
+            <div className='text-white text-center w-full'>
+              <p className=''>In-Progress</p>
+              <h2 className='font-semibold text-3xl flex-1'>0</h2>
+            </div>
+            <div className='w-full h-full bg-no-repeat bg-right bg-cover scale-x-[-1] ' style={{ backgroundImage: `url(${vector1})` }}></div>
+
           </div>
-          <div className='flex gap-5 my-auto'>
-            <ul className='flex gap-5 my-auto'>
-              <li><a href="">Home</a></li>
-              <li><a href="">FAQ</a></li>
-              <li><a href="">Changelog</a></li>
-              <li><a href="">Blog</a></li>
-              <li><a href="">Download</a></li>
-              <li><a href="">Contact</a></li>
-            </ul>
-            <button className='bg-purple-600 text-white p-1 px-2 rounded font-semibold'>New Ticket</button>
+
+
+          <div className='relative w-[50%] h-30 flex items-center rounded-lg justify-between bg-gradient-to-r from-[#54CF68] to-[#00827A]'>
+            <div className=' w-full h-full bg-no-repeat bg-left bg-cover ' style={{ backgroundImage: `url(${vector1})` }}></div>
+            <div className='text-white text-center w-full'>
+              <p className=''>Resolved</p>
+              <h2 className='font-semibold text-3xl flex-1'>0</h2>
+            </div>
+            <div className='w-full h-full bg-no-repeat bg-right bg-cover scale-x-[-1] ' style={{ backgroundImage: `url(${vector1})` }}></div>
+
           </div>
-      </nav>
-
-
-
-
-    <div></div>
+        </div>
 
       </div>
 
-    
+
     </>
   )
 }

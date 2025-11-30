@@ -1,4 +1,4 @@
- # React Q/A
+ <!-- # React Q/A
 
 
 ### **1. What is JSX, and why is it used?**
@@ -24,4 +24,4 @@ State can be shared using:
 ### **5. Event Handling in React**
 Events are handled using camelCase syntax and functions. Example:
 ```jsx
-<button onClick={handleClick}>Click</button>
+<button onClick={handleClick}>Click</button> -->

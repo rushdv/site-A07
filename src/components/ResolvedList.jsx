@@ -8,7 +8,7 @@ const ResolvedList = ({ resolved }) => {
       )}
 
       {resolved.map((r) => (
-        <div key={r.id} className="bg-white shadow p-3 rounded-lg mb-3">
+        <div key={r.id} className="bg-[#E0E7FF] shadow p-3 rounded-lg mb-3">
           {r.title}
         </div>
       ))}

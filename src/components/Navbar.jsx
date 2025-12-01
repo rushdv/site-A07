@@ -16,7 +16,7 @@
 
 const Navbar = () => {
     return (
-        <nav className='flex justify-between px-25 p-3 bg-white'>
+        <nav className='flex justify-between px-45 p-3 bg-white'>
             <div>
                 <h3 className='font-bold text-2xl'>CS - Ticket System</h3>
             </div>

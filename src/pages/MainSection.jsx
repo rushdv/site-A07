@@ -38,7 +38,7 @@ const MainSection = () => {
   };
 
   return (
-    <div className="w-[90%] mx-auto my-10">
+    <div className="w-[80%] mx-auto my-10">
 
       <Banner inProgress={inProgress.length} resolved={resolved.length} />
         <h2 className="text-xl font-bold mt-5 mb-[-2rem]">Customer Tickets</h2>

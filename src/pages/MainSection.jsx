@@ -13,45 +13,58 @@ const MainSection = () => {
   const [inProgress, setInProgress] = useState([]);
   const [resolved, setResolved] = useState([]);
 
-  // When card clicked → add to task status
+  // When card clicked → add to Task Status
   const handleAdd = (ticket) => {
     if (!inProgress.find((t) => t.id === ticket.id)) {
       setInProgress([...inProgress, ticket]);
       toast.success("Added to Task Status");
+    } else {
+      toast.warning("Already added to task!");
     }
   };
 
-  // When complete button clicked
+  // When Complete button is clicked
   const handleComplete = (id) => {
     const task = inProgress.find((t) => t.id === id);
 
-    // Add to resolved
+    // Move to resolved
     setResolved([...resolved, task]);
 
     // Remove from in-progress
     setInProgress(inProgress.filter((t) => t.id !== id));
 
-    // Remove from main tickets
+    // Remove from main ticket list
     setTickets(tickets.filter((t) => t.id !== id));
 
     toast.success("Task Completed!");
   };
 
   return (
-    <div className="w-[80%] mx-auto my-10">
+    <div className="w-[90%] mx-auto my-10">
 
+      {/* Banner */}
       <Banner inProgress={inProgress.length} resolved={resolved.length} />
-        <h2 className="text-xl font-bold mt-5 mb-[-2rem]">Customer Tickets</h2>
-      <div className="grid grid-cols-3 gap-6 mt-10">
 
-        {/* Left: Ticket List */}
-        <div className="col-span-2 grid grid-cols-2 gap-4">
-          {tickets.map((ticket) => (
-            <TicketCard key={ticket.id} ticket={ticket} onAdd={handleAdd} />
-          ))}
+      {/* Heading */}
+      <h2 className="text-xl font-bold mt-10">Customer Tickets</h2>
+
+      {/* Layout */}
+      <div className="grid md:grid-cols-3 grid-cols-1 gap-6 mt-6">
+
+        {/* LEFT SIDE — Tickets */}
+        <div className="md:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-4">
+          {tickets.length > 0 ? (
+            tickets.map((ticket) => (
+              <TicketCard key={ticket.id} ticket={ticket} onAdd={handleAdd} />
+            ))
+          ) : (
+            <p className="text-gray-500 text-center col-span-2">
+              No more tickets to show.
+            </p>
+          )}
         </div>
 
-        {/* Right: Task Status + Resolved */}
+        {/* RIGHT SIDE — Task Status + Resolved */}
         <div>
           <TaskStatus tasks={inProgress} onComplete={handleComplete} />
           <ResolvedList resolved={resolved} />

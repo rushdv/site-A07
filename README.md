@@ -1,27 +1,46 @@
- <!-- # React Q/A
+# React Q/A
 
+## 1. What is JSX, and why is it used?
+JSX (JavaScript XML) is a syntax extension that allows writing HTML-like code inside JavaScript.  
+It is used in React because it makes UI code easier to read, write, and maintain. React converts JSX into JavaScript behind the scenes.
 
-### **1. What is JSX, and why is it used?**
-JSX is a syntax extension of JavaScript that allows writing HTML-like code inside React. It makes UI building easier and readable.
+---
 
+## 2. Difference between State and Props
 
-### **2. Difference between State and Props**
-- **State**: Mutable, managed inside a component.
-- **Props**: Read-only data passed from parent to child.
+### State
+- Managed inside a component  
+- Can be updated  
+- Changing state re-renders the component  
 
+### Props
+- Passed from parent to child  
+- Read-only  
+- Used to send data or functions between components  
 
-### **3. useState Hook**
-`useState` is used to create and manage component state. It returns a value and a function to update that value.
+---
 
+## 3. What is the useState Hook?
+`useState` is a React Hook used to store and update state in functional components.  
+It returns:
+- A state value  
+- A function to update that value  
 
-### **4. Share State Between Components**
+Updating state automatically re-renders the component.
+
+---
+
+## 4. How can you share state between components?
 State can be shared using:
-- Lifting state up
-- Context API
-- Global store (Redux, Zustand)
+- **Lifting state up** (move the state to a common parent)
+- **Context API** (for global shared state)
+- **State management libraries** like Redux or Zustand
 
+---
 
-### **5. Event Handling in React**
-Events are handled using camelCase syntax and functions. Example:
+## 5. How is event handling done in React?
+React handles events using **camelCase syntax** and **functions**.  
+
+Example:
 ```jsx
-<button onClick={handleClick}>Click</button> -->
+<button onClick={handleClick}>Click</button>
